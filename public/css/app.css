@@ -106,7 +106,7 @@ body
     font-family: Cabin;
     /*font-size: 1em;*/
     color: #222D15;
-    background: url(../img/bg.png) repeat-x #FFFFFF;
+    background: url(/images/bg.png?76311aab245814c302c12d146f7190d6) repeat-x #FFFFFF;
 }
 
 a
@@ -139,7 +139,7 @@ h1
 {
     height: 150px;
     overflow:auto;
-    background: url(../img/slide2.jpg) no-repeat center top;
+    background: url(/images/slide2.jpg?d49288b87370f2fffeddd486af9e32b9) no-repeat center top;
 }
 
 .navbar
@@ -311,3 +311,4 @@ footer p
 .book-index ul.category-list li a {
     font-weight: normal;
 }
+
