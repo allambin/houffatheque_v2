@@ -9,6 +9,10 @@ class HomeController extends Controller
     public function show()
     {
         return Inertia::render('Home');
-        //return view('home');
+    }
+
+    public function showInfo()
+    {
+        return Inertia::render('Info');
     }
 }

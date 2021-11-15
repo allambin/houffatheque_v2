@@ -1,16 +1,30 @@
 import React from "react";
+import { Link } from '@inertiajs/inertia-react';
+import { usePage } from '@inertiajs/inertia-react';
+
 
 const NavBar = () => {
+  const { url, component } = usePage();
   return (
-    <nav id="w0" class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
-            <li class="nav-item"><a class="nav-link" href="/renseignements">Renseignements</a></li>
-            <li class="nav-item"><a class="nav-link" href="/bibliotheque">Bibliothèque</a></li>
-            <li class="nav-item"><a class="nav-link" href="/ludotheque">Ludothèque</a></li>
-            <li class="nav-item"><a class="nav-link" href="/evenements">Evénements</a></li>
+    <nav id="w0" className="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+      <div className="container-fluid">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link" href="/">Accueil</Link>
+            </li>
+            <li className={component === 'Info' ? 'active nav-item' : 'nav-item'}>
+              <Link href="/renseignements" className="nav-link">Renseignements</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" href="/bibliotheque">Bibliothèque</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" href="/ludotheque">Ludothèque</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" href="/evenements">Evénements</Link>
+            </li>
           </ul>
         </div>
       </div>

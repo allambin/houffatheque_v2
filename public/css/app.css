@@ -11,11 +11,11 @@ body {
 }
 
 .wrap > .container {
-    padding: 70px 15px 20px;
+    /* padding: 70px 15px 20px; */
 }
 
 .container {
-    width: 1170px;
+    /* width: 1170px; */
 }
 
 .footer {
@@ -153,7 +153,7 @@ h1
 }
 
 .navbar li {
-    height: 50px;
+    height: 53px;
 }
 
 .navbar li:hover
@@ -169,6 +169,15 @@ h1
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: .8rem;
     padding-left: .8rem;
+}
+
+.navbar .active > a, .navbar .active > a:hover {
+    color: #555;
+    background-color: #e7e7e7;
+}
+
+.fa-block {
+    margin-right: 10px;
 }
 
 .btn-default, .btn-success
