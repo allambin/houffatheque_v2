@@ -13,8 +13,7 @@
         "@babel/preset-react": "^7.16.0",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
+        "lodash": "^4.17.19"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.36",

@@ -14,5 +14,12 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'show'])->name('home');
-Route::get('/renseignements', [HomeController::class, 'showInfo'])->name('informations');
+Route::get('/', [HomeController::class, 'show'])->name('root');
+Route::get('/home', [HomeController::class, 'show'])->name('home');
+Route::get('/renseignements', [HomeController::class, 'showInfo'])->name('renseignements');
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
