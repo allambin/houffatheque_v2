@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BoardgameController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -17,6 +18,7 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'show'])->name('root');
 Route::get('/home', [HomeController::class, 'show'])->name('home');
 Route::get('/renseignements', [HomeController::class, 'showInfo'])->name('renseignements');
+Route::get('/ludotheque', [BoardgameController::class, 'index'])->name('ludotheque');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
