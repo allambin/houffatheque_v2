@@ -1,11 +1,13 @@
 import React from "react";
+import { Head } from '@inertiajs/inertia-react'
 import Layout from "../Core/Layout";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faMobileAlt, faEnvelope, faUser, faClock, faEuroSign } from '@fortawesome/free-solid-svg-icons'
 
 const Info = () => {
-  const content = (
-    <div>
+  return (
+    <>
+      <Head title="Renseignements" />
       <h1>Renseignements</h1>
       <div className="row">
         <div className="col-md-6">
@@ -47,12 +49,10 @@ const Info = () => {
           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5115.265688061791!2d5.789982!3d50.130592!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c013fa175fc3ff%3A0x409dd8ec71d5e994!2sRue+de+Schaerbeek+3%2C+6660+Houffalize%2C+Belgique!5e0!3m2!1sfr!2sbe!4v1428305584846" width="800" height="200" frameBorder="0" style={{border:0}}></iframe>
         </div>
       </div>
-    </div>
-  );
-
-  return (
-    <Layout children={content}></Layout>
+    </>
   );
 };
+
+Info.layout = page => <Layout children={page} title="Renseignements" />
 
 export default Info;
