@@ -17,6 +17,7 @@ class BookFactory extends Factory
             'title' => implode(' ', $this->faker->words(3)),
             'isbn10' => $this->faker->isbn10,
             'isbn13' => $this->faker->isbn13,
+            'year' => rand(1950, 2021),
         ];
     }
 }

@@ -16,7 +16,7 @@ const NavBar = () => {
             <li className={component === 'Info' ? 'active nav-item' : 'nav-item'}>
               <Link href="/renseignements" className="nav-link">Renseignements</Link>
             </li>
-            <li className="nav-item">
+            <li className={component === 'Books/Index' ? 'active nav-item' : 'nav-item'}>
               <Link className="nav-link" href="/bibliotheque">Bibliothèque</Link>
             </li>
             <li className={component === 'Boardgames/Index' ? 'active nav-item' : 'nav-item'}>
