@@ -11,4 +11,9 @@ class BoardgameRepository extends BaseRepository implements BoardgameRepositoryI
     {
         parent::__construct($boardgame);
     }
+
+    public function create($params): Boardgame
+    {
+        return Boardgame::create($params);
+    }
 }

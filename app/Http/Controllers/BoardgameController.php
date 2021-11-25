@@ -32,7 +32,7 @@ class BoardgameController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Boardgames/Create');
     }
 
     /**
@@ -43,7 +43,13 @@ class BoardgameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'comment' => 'required',
+        ]);
+
+        $this->boardgameRepository->create($request->all());
+        return redirect()->route('ludotheque.index')->with('success','Boardgame created successfully.');
     }
 
     /**

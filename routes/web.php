@@ -18,8 +18,16 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'show'])->name('root');
 Route::get('/home', [HomeController::class, 'show'])->name('home');
+
+// Route::prefix('ludotheque')->group(function () {
+//     Route::get('/', [BoardgameController::class, 'index']);
+//     Route::get('/create', [BoardgameController::class, 'create']);
+// });
+Route::resource('ludotheque', BoardgameController::class);
+
 Route::get('/renseignements', [HomeController::class, 'showInfo'])->name('renseignements');
-Route::get('/ludotheque', [BoardgameController::class, 'index'])->name('ludotheque');
+// Route::get('/ludotheque', [BoardgameController::class, 'index'])->name('ludotheque');
+// Route::get('/ludotheque/create', [BoardgameController::class, 'create']);
 Route::get('/bibliotheque', [BookController::class, 'index'])->name('bibliotheque');
 
 // Route::get('/dashboard', function () {
