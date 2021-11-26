@@ -23,7 +23,9 @@ Route::get('/home', [HomeController::class, 'show'])->name('home');
 //     Route::get('/', [BoardgameController::class, 'index']);
 //     Route::get('/create', [BoardgameController::class, 'create']);
 // });
-Route::resource('ludotheque', BoardgameController::class);
+Route::resource('ludotheque', BoardgameController::class)->parameters([
+    'ludotheque' => 'boardgame',
+]);
 
 Route::get('/renseignements', [HomeController::class, 'showInfo'])->name('renseignements');
 // Route::get('/ludotheque', [BoardgameController::class, 'index'])->name('ludotheque');

@@ -1,9 +1,10 @@
 import React from "react";
-import { usePage, Head } from '@inertiajs/inertia-react';
+import { usePage, Head, Link } from '@inertiajs/inertia-react';
 import Layout from "../../Core/Layout";
 
 const Index = () => {
-  const { boardgames } = usePage().props;
+  const { boardgames, auth } = usePage().props;
+  console.log(auth);
   return (
     <>
       <Head title="Ludothèque" />
@@ -12,6 +13,7 @@ const Index = () => {
           <tr>
             <th>Name</th>
             <th>Comment</th>
+            { auth.user ? (<th>Actions</th>) : null }
           </tr>
         </thead>
         <tbody>
@@ -19,6 +21,7 @@ const Index = () => {
           <tr key={id}>
             <td>{name}</td>
             <td>{comment}</td>
+            { auth.user ? (<td><Link href={`ludotheque/${id}/edit`} className="nav-link">Modifier</Link></td>) : null }
           </tr>
           ))}
         </tbody>

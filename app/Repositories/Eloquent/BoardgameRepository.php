@@ -16,4 +16,9 @@ class BoardgameRepository extends BaseRepository implements BoardgameRepositoryI
     {
         return Boardgame::create($params);
     }
+
+    public function edit(Boardgame $boardgame, array $params): bool
+    {
+        return $boardgame->fill($params)->save();
+    }
 }

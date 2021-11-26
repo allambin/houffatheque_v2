@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Boardgame;
 use App\Repositories\BoardgameRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class BoardgameController extends Controller
@@ -71,7 +72,9 @@ class BoardgameController extends Controller
      */
     public function edit(Boardgame $boardgame)
     {
-        //
+        return Inertia::render('Boardgames/Edit', [
+            'boardgame' => $boardgame,
+        ]);
     }
 
     /**
@@ -83,7 +86,13 @@ class BoardgameController extends Controller
      */
     public function update(Request $request, Boardgame $boardgame)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'comment' => 'required',
+        ]);
+
+        $this->boardgameRepository->edit($boardgame, $request->all());
+        return redirect()->route('ludotheque.index')->with('success','Boardgame modified successfully.');
     }
 
     /**

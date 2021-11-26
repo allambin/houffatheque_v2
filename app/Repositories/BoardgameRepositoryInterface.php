@@ -9,4 +9,5 @@ interface BoardgameRepositoryInterface
 {
     public function all(): Collection;
     public function create($params): Boardgame;
+    public function edit(Boardgame $boardgame, array $params): bool;
 }
