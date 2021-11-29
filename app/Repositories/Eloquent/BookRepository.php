@@ -17,4 +17,12 @@ class BookRepository extends BaseRepository implements BookRepositoryInterface
     {
         return $this->model->with('authors')->with('publisher')->with('collection')->get();
     }
+
+    public function findLatest($number = 5): Collection
+    {
+        return $this->model->with('authors')
+            ->orderByDesc('created_at')
+            ->limit(5)
+            ->get();
+    }
 }

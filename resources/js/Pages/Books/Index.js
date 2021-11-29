@@ -3,10 +3,17 @@ import { usePage, Head } from '@inertiajs/inertia-react';
 import Layout from "../../Core/Layout";
 
 const Index = () => {
-  const { books } = usePage().props;
+  const { books, collections } = usePage().props;
   return (
     <>
       <Head title="Bibliothèque" />
+      <ul>
+      {collections.map(({ id, name }) => (
+        <li key={id}>
+          { name }
+        </li>
+      ))}
+      </ul>
       <table>
         <thead>
           <tr>

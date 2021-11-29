@@ -4,8 +4,7 @@ namespace App\Repositories;
 
 use Illuminate\Support\Collection;
 
-interface BookRepositoryInterface
+interface CollectionRepositoryInterface
 {
     public function all(): Collection;
-    public function findLatest($number = 5): Collection;
 }
