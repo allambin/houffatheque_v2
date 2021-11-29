@@ -10,7 +10,10 @@ use Inertia\Inertia;
 
 class BoardgameController extends Controller
 {
-    public function __construct(private BoardgameRepositoryInterface $boardgameRepository){}
+    public function __construct(private BoardgameRepositoryInterface $boardgameRepository)
+    {
+        $this->middleware('auth')->only(['create', 'store', 'edit', 'update']);
+    }
 
     /**
      * Display a listing of the resource.
